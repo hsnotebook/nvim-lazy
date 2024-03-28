@@ -14,7 +14,7 @@ return {
     ft = { "vimwiki", "markdown" },
     keys = {
       {
-        "<leader>cp",
+        "<leader>np",
         ft = "vimwiki",
         "<cmd>MarkdownPreviewToggle<cr>",
         desc = "Markdown Preview",
@@ -30,12 +30,12 @@ return {
         let g:vimwiki_list = [wiki]
         let g:vimwiki_html_header_numbering = 1
         let g:vimwiki_markdown_link_ext = 1
-        let g:vimwiki_map_prefix = '<Leader>n'
-        let wiki.nested_syntaxes = {'bash':'bash', 'python': 'python', 'lua': 'lua', 'java': 'java', 'plantuml': 'plantuml', 'xml': 'xml', "yaml": 'yaml'}
+        let g:vimwiki_map_prefix = '<leader>n'
+        let wiki.nested_syntaxes = {'bash':'bash', 'python': 'python', 'lua': 'lua', 'java': 'java', 'plantuml': 'plantuml', 'xml': 'xml', 'yaml': 'yaml', 'js': 'javascript', 'json': 'json'}
         ]])
     end,
     keys = {
-      { "<leader>ni", "<cmd>VimwikiIndex<cr>", desc = "Open Inbox" },
+      { "<leader>ni", "<cmd>e ~/wiki/0.inbox/Inbox.md<cr>", desc = "Open Inbox" },
       { "<leader>nd", "<cmd>VimwikiDeleteFile<cr>", desc = "Delete Wiki File" },
       {
         "<leader>nf",

@@ -1,4 +1,5 @@
 return {
+  { "folke/persistence.nvim", enabled = false },
   { "lilydjwg/fcitx.vim" },
 
   {
@@ -10,6 +11,7 @@ return {
       },
     },
     keys = {
+      { "<leader>,", "<cmd>Telescope buffers sort_mru=true<cr>", desc = "Switch Buffer" },
       { "<leader>sC", "<cmd>Telescope command_history<cr>", desc = "Command History" },
       { "<leader>sc", "<cmd>Telescope commands<cr>", desc = "Commands" },
       { "<leader>gs", false },
@@ -50,4 +52,6 @@ return {
       { "<leader>fs", "<cmd>Neotree focus<cr>", desc = "Show in Neotree" },
     },
   },
+  { "tpope/vim-abolish" },
+  { "mg979/vim-visual-multi" },
 }

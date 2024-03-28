@@ -11,5 +11,6 @@ opt.relativenumber = false
 opt.spell = false
 opt.signcolumn = "no"
 opt.splitbelow = false
+opt.cursorline = false
 -- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 -- vim.opt.foldmethod = "expr"
