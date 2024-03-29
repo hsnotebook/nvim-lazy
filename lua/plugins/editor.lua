@@ -1,5 +1,4 @@
 return {
-  { "folke/persistence.nvim", enabled = false },
   { "lilydjwg/fcitx.vim" },
 
   {
@@ -30,28 +29,17 @@ return {
       { "<leader>gs", "<cmd>Git<cr>", desc = "Git Status" },
     },
   },
+
+  { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      enable_git_status = false,
-      enable_diagnostics = false,
-      window = {
-        mappings = {
-          ["l"] = "open",
-          ["h"] = "close_node",
-          ["x"] = "open_split",
-          ["v"] = "open_vsplit",
-        },
-      },
-      filesystem = {
-        group_empty_dirs = true,
-        -- follow_current_file = { enabled = false },
-      },
-    },
+    "preservim/nerdtree",
     keys = {
-      { "<leader>fs", "<cmd>Neotree focus<cr>", desc = "Show in Neotree" },
+      { "<leader>fe", "<cmd>lua vim.cmd('NERDTreeToggle '..LazyVim.root())<cr>", desc = "Explore NERDTree (Root Dir)" },
+      { "<leader>fE", "<cmd>lua vim.cmd('NERDTreeToggle '..vim.uv.cwd())<cr>", desc = "Explore NERDTree (cwd)" },
+      { "<leader>fs", "<cmd>NERDTreeFind<cr>", desc = "Show in NERDTree" },
     },
   },
+
   { "tpope/vim-abolish" },
   { "mg979/vim-visual-multi" },
 }
