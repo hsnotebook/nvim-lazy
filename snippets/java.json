@@ -1,0 +1,12 @@
+{
+  "hstest": {
+    "prefix": "hstest",
+    "body": [
+      "package",
+      "public class ${TM_FILENAME_BASE} {",
+      "${RELATIVE_FILEPATH}",
+      "${RELATIVE_FILEPATH/.*java.(.*).\\w*.java/$1/g}"
+    ],
+    "description": "Public static main method"
+  }
+}

@@ -30,15 +30,31 @@ return {
     },
   },
 
-  { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   {
-    "preservim/nerdtree",
-    keys = {
-      { "<leader>fe", "<cmd>lua vim.cmd('NERDTreeToggle '..LazyVim.root())<cr>", desc = "Explore NERDTree (Root Dir)" },
-      { "<leader>fE", "<cmd>lua vim.cmd('NERDTreeToggle '..vim.uv.cwd())<cr>", desc = "Explore NERDTree (cwd)" },
-      { "<leader>fs", "<cmd>NERDTreeFind<cr>", desc = "Show in NERDTree" },
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      window = {
+        mappings = {
+          ["l"] = "open",
+          ["h"] = "close_node",
+          ["x"] = "open_split",
+          ["v"] = "open_vsplit",
+        },
+      },
+      filesystem = {
+        follow_current_file = { enabled = false },
+        group_empty_dirs = true,
+      },
     },
   },
+  -- {
+  --   "preservim/nerdtree",
+  --   keys = {
+  --     { "<leader>fe", "<cmd>lua vim.cmd('NERDTreeToggle '..LazyVim.root())<cr>", desc = "Explore NERDTree (Root Dir)" },
+  --     { "<leader>fE", "<cmd>lua vim.cmd('NERDTreeToggle '..vim.uv.cwd())<cr>", desc = "Explore NERDTree (cwd)" },
+  --     { "<leader>fs", "<cmd>NERDTreeFind<cr>", desc = "Show in NERDTree" },
+  --   },
+  -- },
 
   { "tpope/vim-abolish" },
   { "mg979/vim-visual-multi" },
