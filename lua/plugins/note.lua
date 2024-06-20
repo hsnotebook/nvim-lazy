@@ -23,6 +23,7 @@ return {
   },
   {
     "vimwiki/vimwiki",
+    enabled = false,
     lazy = false,
     init = function()
       vim.cmd([[
@@ -77,6 +78,33 @@ return {
     opts = {
       defaults = {
         file_ignore_patterns = { ".obsidian" },
+      },
+    },
+    keys = {
+      { "<leader>ni", "<cmd>e ~/wiki/0.inbox/Inbox.md<cr>", desc = "Open Inbox" },
+      {
+        "<leader>nf",
+        function()
+          require("telescope.builtin").find_files({ prompt_title = "< Find In Notes >", cwd = "~/wiki/" })
+        end,
+        desc = "Find Notes",
+      },
+      {
+        "<leader>ns",
+        function()
+          require("telescope.builtin").live_grep({ prompt_title = "< Search In Notes >", cwd = "~/wiki/" })
+        end,
+        desc = "Search Notes",
+      },
+      {
+        "<leader>no",
+        function()
+          local fullPath = vim.api.nvim_buf_get_name(0) -- /home/hs/wiki/xxxxx
+          local wikipath = string.sub(fullPath, 15)
+          local uri = ("obsidian://open?vault=wiki&file=%s"):format(wikipath)
+          vim.fn.jobstart("xdg-open" .. " '" .. uri .. "'")
+        end,
+        desc = "Open in Obsidian",
       },
     },
   },
