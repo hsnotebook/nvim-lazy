@@ -18,4 +18,7 @@ return {
       { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
     },
   },
+
+  -- do not like
+  { "akinsho/bufferline.nvim", enabled = false },
 }
