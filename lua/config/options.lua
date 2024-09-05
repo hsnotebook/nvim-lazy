@@ -8,3 +8,5 @@ opt.number = false
 opt.relativenumber = false
 opt.cursorline = false
 opt.spell = false
+opt.signcolumn = "no"
+opt.splitbelow = false
