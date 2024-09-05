@@ -8,4 +8,8 @@ return {
       )
     end,
   },
+  {
+    "nvim-neotest/neotest",
+    opts = { adapters = { "neotest-java" } },
+  },
 }
