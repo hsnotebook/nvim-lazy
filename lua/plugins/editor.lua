@@ -31,4 +31,15 @@ return {
       { "<leader>fs", "<cmd>Neotree reveal_force_cwd<cr>", desc = "Show in Neotree" },
     },
   },
+
+  {
+    "hedyhli/outline.nvim",
+    optional = true,
+    opts = {
+      keymaps = {
+        up_and_jump = "<c-k>",
+        down_and_jump = "<c-j>",
+      },
+    },
+  },
 }
