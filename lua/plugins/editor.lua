@@ -43,4 +43,5 @@ return {
       },
     },
   },
+  { "lambdalisue/vim-suda" },
 }
