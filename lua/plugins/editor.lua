@@ -45,4 +45,5 @@ return {
   },
   { "lambdalisue/vim-suda" },
   { "mg979/vim-visual-multi" },
+  { "tpope/vim-abolish" },
 }
