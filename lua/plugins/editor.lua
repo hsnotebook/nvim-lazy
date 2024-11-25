@@ -46,4 +46,10 @@ return {
   { "lambdalisue/vim-suda" },
   { "mg979/vim-visual-multi" },
   { "tpope/vim-abolish" },
+  {
+    "jpalardy/vim-slime",
+    init = function()
+      vim.g.slime_target = "tmux"
+    end,
+  },
 }
