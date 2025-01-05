@@ -9,7 +9,7 @@ return {
     "nvim-telescope/telescope.nvim",
     opts = {
       defaults = {
-        file_ignore_patterns = { "target" },
+        file_ignore_patterns = { "target/", ".env/" },
         path_display = { "smart" },
       },
     },
