@@ -6,12 +6,18 @@ return {
     end,
   },
   {
-    "nvim-telescope/telescope.nvim",
+    "ibhagwan/fzf-lua",
     opts = {
-      defaults = {
-        file_ignore_patterns = { "target/", ".env/" },
-        path_display = { "smart" },
+      actions = {
+        files = {
+          true,
+          ["ctrl-x"] = require("fzf-lua").actions.file_split,
+        },
       },
+    },
+    keys = {
+      { "<leader>gc", false },
+      { "<leader>gs", false },
     },
   },
   {

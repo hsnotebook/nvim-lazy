@@ -14,13 +14,6 @@ return {
     -- version = "*", -- recommended, use latest release instead of latest commit
     "hsnotebook/obsidian.nvim",
     lazy = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      {
-        "nvim-telescope/telescope.nvim",
-        opts = { defaults = { file_ignore_patterns = { ".obsidian" } } },
-      },
-    },
     opts = {
       workspaces = {
         {
@@ -74,14 +67,14 @@ return {
       {
         "<leader>nf",
         function()
-          require("telescope.builtin").find_files({ prompt_title = "< Find In Notes >", cwd = "~/wiki/" })
+          require("fzf-lua").files({ prompt = "< Find In Notes >", cwd = "~/wiki/" })
         end,
         desc = "Find Notes",
       },
       {
-        "<leader>ns",
+        "<leader>n/",
         function()
-          require("telescope.builtin").live_grep({ prompt_title = "< Search In Notes >", cwd = "~/wiki/" })
+          require("fzf-lua").live_grep({ prompt = "< Search In Notes >", cwd = "~/wiki/" })
         end,
         desc = "Search Notes",
       },
