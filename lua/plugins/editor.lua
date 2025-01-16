@@ -14,6 +14,9 @@ return {
           ["ctrl-x"] = require("fzf-lua").actions.file_split,
         },
       },
+      files = {
+        fd_opts = [[--color=never --type f --hidden --follow -E .git -E .obsidian]],
+      },
     },
     keys = {
       { "<leader>gc", false },
