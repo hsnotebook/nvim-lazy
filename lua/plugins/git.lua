@@ -4,8 +4,17 @@ return {
     "tpope/vim-fugitive",
     lazy = true,
     cmd = "Git",
+  },
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
+      "ibhagwan/fzf-lua",
+    },
+    config = true,
     keys = {
-      { "<leader>gs", "<cmd>Git<cr>", desc = "Git Status" },
+      { "<leader>gs", "<cmd>Neogit cwd=%:p:h<cr>", desc = "Neogit Status" },
     },
   },
 }
