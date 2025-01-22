@@ -21,6 +21,7 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.java" },
     { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.vue" },
     { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.yaml" },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.sql" },
     { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.test.core" },
     { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.dap.core" },
     { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.coding.mini-surround" },
