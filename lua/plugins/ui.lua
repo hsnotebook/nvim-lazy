@@ -21,4 +21,11 @@ return {
 
   -- do not like
   { "akinsho/bufferline.nvim", enabled = false },
+
+  {
+    "folke/snacks.nvim",
+    opts = {
+      indent = { enabled = false },
+    },
+  },
 }
