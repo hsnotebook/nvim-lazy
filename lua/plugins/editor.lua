@@ -9,7 +9,7 @@ return {
     "ibhagwan/fzf-lua",
     opts = {
       files = {
-        fd_opts = [[--color=never --type f --hidden --follow -E .git -E .obsidian]],
+        fd_opts = [[--color=never --type f --hidden --follow -E .git -E .obsidian -E .trash -E target]],
         actions = {
           ["ctrl-x"] = require("fzf-lua").actions.file_split,
         },
