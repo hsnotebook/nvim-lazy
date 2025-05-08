@@ -24,3 +24,27 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.spell = false
   end,
 })
+
+local function send_input_method_signal(event)
+  local cmd = string.format("echo '%s' | nc 10.8.0.2 12345", event)
+  vim.fn.jobstart({ "sh", "-c", cmd }, { detach = true })
+end
+
+local is_ssh = os.getenv("SSH_CONNECTION") ~= nil
+
+if is_ssh then
+  -- 设置自动命令
+  vim.api.nvim_create_autocmd("InsertLeave", {
+    pattern = "*",
+    callback = function()
+      send_input_method_signal("INSERT_LEAVE")
+    end,
+  })
+
+  vim.api.nvim_create_autocmd("InsertEnter", {
+    pattern = "*",
+    callback = function()
+      send_input_method_signal("INSERT_ENTER")
+    end,
+  })
+end
