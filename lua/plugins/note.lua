@@ -17,8 +17,16 @@ return {
     opts = {
       workspaces = {
         {
-          name = "wiki",
-          path = "~/wiki",
+          name = "personal",
+          path = "~/wiki/personal",
+        },
+        {
+          name = "hbjg",
+          path = "~/wiki/jobs/hbjg",
+        },
+        {
+          name = "ctfo",
+          path = "~/wiki/jobs/ctfo",
         },
       },
       notes_subdir = "0.inbox",
@@ -63,21 +71,10 @@ return {
       end,
     },
     keys = {
+      { "<leader>nw", "<cmd>ObsidianWorkspace<cr>", desc = "Change Workspace" },
       { "<leader>ni", "<cmd>ObsidianToday<cr>", desc = "Open Today Note" },
-      {
-        "<leader>nf",
-        function()
-          require("fzf-lua").files({ prompt = "< Find In Notes >", cwd = "~/wiki/" })
-        end,
-        desc = "Find Notes",
-      },
-      {
-        "<leader>n/",
-        function()
-          require("fzf-lua").live_grep({ prompt = "< Search In Notes >", cwd = "~/wiki/" })
-        end,
-        desc = "Search Notes",
-      },
+      { "<leader>nf", "<cmd>ObsidianQuickSwitch<cr>", desc = "Find Notes" },
+      { "<leader>n/", "<cmd>ObsidianSearch<cr>", desc = "Search Notes" },
       {
         "<leader>no",
         function()
