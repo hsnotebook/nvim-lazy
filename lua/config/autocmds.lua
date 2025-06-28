@@ -15,6 +15,15 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("markdown"),
+  pattern = { "markdown" },
+  callback = function()
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+  end,
+})
+
 -- `vim.opt.spell = false` in options.lua does not work.
 -- So use autocmds to config `spell`
 vim.api.nvim_create_autocmd("FileType", {
