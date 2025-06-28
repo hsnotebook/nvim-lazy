@@ -5,3 +5,5 @@
 -- Pressing <esc>j or <esc>k quickly will tringer this keymap, I don't like it
 vim.keymap.del({ "i", "n", "v" }, "<A-k>")
 vim.keymap.del({ "i", "n", "v" }, "<A-j>")
+
+vim.keymap.del({ "i", "n", "v" }, "<C-s>")
