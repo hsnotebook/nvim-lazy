@@ -44,7 +44,7 @@ return {
       follow_url_func = function(url)
         vim.print(url)
         if url:find("^file:") ~= nil then
-          url = string.sub(url, 6)
+          url = string.sub(url, 8)
           if url:find("%.uxf$") ~= nil then
             vim.fn.jobstart({ "umlet", url })
           else
