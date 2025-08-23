@@ -35,7 +35,8 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 local function send_input_method_signal(event)
-  local cmd = string.format("echo '%s' | nc 10.8.0.2 12345", event)
+  local ssh_client_ip = os.getenv("SSH_CONNECTION"):gmatch("%S+")()
+  local cmd = string.format("echo '%s' | nc %s 12345", event, ssh_client_ip)
   vim.fn.jobstart({ "sh", "-c", cmd }, { detach = true })
 end
 
