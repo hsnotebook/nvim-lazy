@@ -17,12 +17,12 @@ return {
     opts = {
       workspaces = {
         {
-          name = "personal",
-          path = "~/wiki/personal",
-        },
-        {
           name = "hbjg",
           path = "~/wiki/jobs/hbjg",
+        },
+        {
+          name = "personal",
+          path = "~/wiki/personal",
         },
         {
           name = "ctfo",
