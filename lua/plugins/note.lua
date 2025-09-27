@@ -88,10 +88,5 @@ return {
     },
   },
 
-  {
-    "hotoo/pangu.vim",
-    config = function()
-      vim.cmd([[autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki call PanGuSpacing('ALL')]])
-    end,
-  },
+  { "hotoo/pangu.vim" },
 }
