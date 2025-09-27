@@ -2,10 +2,9 @@ return {
   {
     "mfussenegger/nvim-jdtls",
     opts = function(_, opts)
-      vim.list_extend(
-        opts.cmd,
-        { "--jvm-arg=" .. string.format("-javaagent:%s", vim.fn.expand("$MASON/share/jdtls/lombok.jar")) }
-      )
+      opts.root_dir = function(fname)
+        require("lspconfig.util").root_pattern(".git", "pom.xml", "build.gradle")(fname)
+      end
     end,
   },
   {
