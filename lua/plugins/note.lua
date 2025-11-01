@@ -10,9 +10,9 @@ return {
   },
 
   {
-    -- "epwalsh/obsidian.nvim",
-    -- version = "*", -- recommended, use latest release instead of latest commit
-    "hsnotebook/obsidian.nvim",
+    "obsidian-nvim/obsidian.nvim",
+    version = "*", -- recommended, use latest release instead of latest commit
+    ft = "markdown",
     lazy = false,
     opts = {
       workspaces = {
@@ -71,20 +71,11 @@ return {
       end,
     },
     keys = {
-      { "<leader>nw", "<cmd>ObsidianWorkspace<cr>", desc = "Change Workspace" },
-      { "<leader>ni", "<cmd>ObsidianToday<cr>", desc = "Open Today Note" },
-      { "<leader>nf", "<cmd>ObsidianQuickSwitch<cr>", desc = "Find Notes" },
-      { "<leader>n/", "<cmd>ObsidianSearch<cr>", desc = "Search Notes" },
-      {
-        "<leader>no",
-        function()
-          local fullPath = vim.api.nvim_buf_get_name(0) -- /home/hs/wiki/xxxxx
-          local wikipath = string.sub(fullPath, 15)
-          local uri = ("obsidian://open?vault=wiki&file=%s"):format(wikipath)
-          vim.fn.jobstart("xdg-open" .. " '" .. uri .. "'")
-        end,
-        desc = "Open in Obsidian",
-      },
+      { "<leader>nw", "<cmd>Obsidian workspace<cr>", desc = "Change Workspace" },
+      { "<leader>ni", "<cmd>Obsidian today<cr>", desc = "Open Today Note" },
+      { "<leader>nf", "<cmd>Obsidian quick_switch<cr>", desc = "Find Notes" },
+      { "<leader>n/", "<cmd>Obsidian search<cr>", desc = "Search Notes" },
+      { "<leader>no", "<cmd>Obsidian open<cr>", desc = "Open in Obsidian" },
     },
   },
 
