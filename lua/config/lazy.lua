@@ -28,6 +28,7 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.coding.mini-surround" },
     { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.editor.outline" },
     { import = "plugins" },
+    { import = "snippets" },
   },
   defaults = {
     lazy = false,
