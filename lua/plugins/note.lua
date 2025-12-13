@@ -1,6 +1,7 @@
 local myWorkspaces = {
-  { name = "hbjg", path = "~/wiki/jobs/hbjg", tag = "job" },
+  { name = "cmsi", path = "~/wiki/jobs/cmsi", tag = "job" },
   { name = "personal", path = "~/wiki/personal", tag = "life" },
+  { name = "hbjg", path = "~/wiki/jobs/hbjg", tag = "job" },
   { name = "ctfo", path = "~/wiki/jobs/ctfo", tag = "job" },
 }
 
