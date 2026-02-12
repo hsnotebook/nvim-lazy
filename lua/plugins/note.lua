@@ -40,6 +40,10 @@ local function OpenMondayNote()
   end
 end
 
+vim.api.nvim_create_user_command("OpenMondayNote", function(opts)
+  OpenMondayNote()
+end, {})
+
 return {
   {
     "folke/which-key.nvim",
