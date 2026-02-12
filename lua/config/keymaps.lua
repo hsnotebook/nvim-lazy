@@ -7,3 +7,16 @@ vim.keymap.del({ "i", "n", "v" }, "<A-k>")
 vim.keymap.del({ "i", "n", "v" }, "<A-j>")
 
 vim.keymap.del({ "i", "n", "v" }, "<C-s>")
+
+-- Visual mode: Y to copy file path with line numbers to clipboard
+vim.keymap.set("v", "Y", function()
+  local file_path = vim.fn.expand("%:.")
+  local start_line = vim.fn.line("v")
+  local end_line = vim.fn.line(".")
+  if start_line > end_line then
+    start_line, end_line = end_line, start_line
+  end
+  local result = string.format("在 %s 的第 %d-%d 行：", file_path, start_line, end_line)
+  vim.fn.setreg("+", result)
+  vim.notify("Copied: " .. result)
+end, { desc = "Copy file path with line numbers" })
