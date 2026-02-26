@@ -73,6 +73,9 @@ return {
           return string.format("%s-", os.date("%Y%m%d%H%M%S"))
         end,
       },
+      footer = {
+        enabled = false, -- 关键：设置为 false 即可隐藏底部统计栏
+      },
       wiki_link_func = "prepend_note_id",
       follow_url_func = function(url)
         vim.print(url)
