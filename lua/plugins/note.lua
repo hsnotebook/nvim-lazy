@@ -32,11 +32,10 @@ local function OpenMondayNote()
     else
       offsetDays = -(current_wday - 2) -- 2 对应周一
     end
-    local command = "silent ObsidianToday " .. offsetDays
-    vim.cmd(command)
+    vim.cmd("Obsidian today " .. offsetDays)
   -- 执行打开周一日记的逻辑
   else
-    vim.cmd("silent ObsidianToday")
+    vim.cmd("Obsidian today")
   end
 end
 
