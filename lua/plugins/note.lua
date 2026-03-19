@@ -68,7 +68,7 @@ return {
         date_format = "%Y-%m-%d",
       },
       attachments = {
-        img_folder = "assets/images",
+        folder = "assets/images",
         img_name_func = function()
           return string.format("%s-", os.date("%Y%m%d%H%M%S"))
         end,
@@ -76,23 +76,14 @@ return {
       footer = {
         enabled = false, -- 关键：设置为 false 即可隐藏底部统计栏
       },
-      wiki_link_func = "prepend_note_id",
-      follow_url_func = function(url)
-        vim.print(url)
-        if url:find("^file:") ~= nil then
-          url = string.sub(url, 8)
-          if url:find("%.uxf$") ~= nil then
-            vim.fn.jobstart({ "umlet", url })
-          else
-            vim.fn.jobstart({ "xdg-open", url })
-          end
-        else
-          vim.fn.jobstart({ "xdg-open", url })
-        end
-      end,
-      follow_img_func = function(img)
-        vim.fn.jobstart({ "xdg-open", img })
-      end,
+      legacy_commands = false,
+      link = {
+        style = function(opts)
+          -- prepend_note_id style: [[note-id|label]]
+          local header_or_block = opts.header and ("#" .. opts.header) or opts.block or ""
+          return string.format("[[%s%s|%s]]", opts.id, header_or_block, opts.label)
+        end,
+      },
       note_id_func = function(title)
         local suffix = ""
         if title ~= nil then
